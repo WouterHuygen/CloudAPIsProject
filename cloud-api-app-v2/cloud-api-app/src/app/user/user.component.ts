@@ -10,23 +10,21 @@ import * as firebase from "firebase/app";
 import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: 'app-navbar.component.html',
-  styles: []
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
-export class AppNavbarComponent implements OnInit {
+export class UserComponent implements OnInit {
 
   user: FirebaseUserModel = new FirebaseUserModel(this.authService, this.af, this.router);
 
   constructor(
     public authService: AuthService,
     public af:AngularFireAuth,
-    private router: Router
-  ) {
-    
-  }
+    private router: Router,
+  ) {}
 
   ngOnInit() {
-  }
 
+  }
 }

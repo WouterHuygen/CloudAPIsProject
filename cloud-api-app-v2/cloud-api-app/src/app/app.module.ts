@@ -9,15 +9,17 @@ import { environment } from './../environments/environment';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { AuthService } from './core/auth.service';
+import { UserComponent } from './user/user.component';
+import { AuthGuard } from './core/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavbarComponent,
-    LoginComponent,
-    HomeComponent
+    HomeComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -27,12 +29,12 @@ import { HomeComponent } from './home/home.component';
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
-      { path: "", redirectTo: 'home', pathMatch: 'full' },
+      { path: "", redirectTo: 'home', pathMatch: 'full', canActivate: [AuthGuard] },
       { path: "home", component: HomeComponent },
-      { path: "login", component: LoginComponent }
+      { path: "user", component: UserComponent, canActivate: [AuthGuard]}
     ], {useHash: true})
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
