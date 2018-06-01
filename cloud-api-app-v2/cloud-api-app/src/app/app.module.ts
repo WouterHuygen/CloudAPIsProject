@@ -13,16 +13,20 @@ import { HomeComponent } from './home/home.component';
 import { AuthService } from './core/auth.service';
 import { UserComponent } from './user/user.component';
 import { AuthGuard } from './core/auth.guard';
+import { BeerComponent } from './beer/beer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavbarComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    BeerComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
@@ -31,7 +35,8 @@ import { AuthGuard } from './core/auth.guard';
     RouterModule.forRoot([
       { path: "", redirectTo: 'home', pathMatch: 'full', canActivate: [AuthGuard] },
       { path: "home", component: HomeComponent },
-      { path: "user", component: UserComponent, canActivate: [AuthGuard]}
+      { path: "user", component: UserComponent, canActivate: [AuthGuard] },
+      { path: "beer", component: BeerComponent, canActivate: [AuthGuard] },
     ], {useHash: true})
   ],
   providers: [AuthService, AuthGuard],
