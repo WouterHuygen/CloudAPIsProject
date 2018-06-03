@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,20 +33,29 @@ namespace beer_AspMvcCore
                 options => options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")
                 )
-            );  
-
+            );
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", p =>
+                {
+                p.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+                });
+            });
             services.AddMvc();
-            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, LibraryContext libContext)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("AllowAll");
             app.UseMvc();
 
             DBIntitializer.Initialize(libContext);

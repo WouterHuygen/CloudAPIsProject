@@ -14,13 +14,13 @@ public class BreweryController : Controller
         this.context = context;
     }
 
-    [HttpGet]         // api/v1/beers
+    [HttpGet]        
     public List<Brewery> GetAllBreweries()
     {
         return context.Breweries.ToList();
     }
 
-    [Route("{id}")]   // api/v1/beers/2
+    [Route("{id}")]
     [HttpGet]
     public IActionResult GetBrewery(int id)
     {
@@ -31,7 +31,7 @@ public class BreweryController : Controller
         return Ok(brewery);
     }
 
-    [Route("{id}/beers")]   // api/v1/beers/2
+    [Route("{id}/beers")]
     [HttpGet]
     public IActionResult GetBeersForBrewery(int id)
     {

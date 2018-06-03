@@ -15,7 +15,7 @@ public class BeerController : Controller
     }
 
     [HttpGet]         // api/v1/beers
-    public List<Beer> GetAllBeers(string type, string name, int? page, string sort, int length = 2, string dir = "asc")
+    public List<Beer> GetAllBeers(string type, string name, int? page, string sort, int length = 1000, string dir = "asc")
     {
         IQueryable<Beer> query = context.Beers;
 
@@ -50,21 +50,26 @@ public class BeerController : Controller
         return query.ToList();
     }
 
-    [Route("{id}")]   // api/v1/beers/2
+    [Route("{id}")] 
     [HttpGet]
     public IActionResult GetBeer(int id)
     {
-        var book = context.Beers
+        var beer = context.Beers.Find(id);
+        if (beer == null)
+            return NotFound();
+
+        return Ok(beer);
+        /*var beer = context.Beers
                     .Include(d => d.Brewery)
                     .SingleOrDefault(d => d.Id == id);
 
-        if (book == null)
+        if (beer == null)
             return NotFound();
 
-        return Ok(book);
+        return Ok(beer);*/
     }
 
-    [Route("{id}/brewery")]   // api/v1/beers/2
+    [Route("{id}/brewery")]
     [HttpGet]
     public IActionResult GetBreweryForBeer(int id)
     {
@@ -96,6 +101,7 @@ public class BeerController : Controller
         orgBeer.Type = updateBeer.Type;
         orgBeer.Description = updateBeer.Description;
         orgBeer.AlcoholPercentage = updateBeer.AlcoholPercentage;
+        orgBeer.Image = updateBeer.Image;
 
         context.SaveChanges();
         return Ok(orgBeer);

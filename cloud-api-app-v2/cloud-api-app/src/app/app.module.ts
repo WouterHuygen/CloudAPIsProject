@@ -15,6 +15,8 @@ import { UserComponent } from './user/user.component';
 import { AuthGuard } from './core/auth.guard';
 import { BeerComponent } from './beer/beer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BeerService } from './core/beer.service';
+import { OwnBeerService } from './core/own-beer.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
       { path: "beer", component: BeerComponent, canActivate: [AuthGuard] },
     ], {useHash: true})
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, BeerService, OwnBeerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
