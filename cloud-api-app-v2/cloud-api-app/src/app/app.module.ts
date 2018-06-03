@@ -17,6 +17,7 @@ import { BeerComponent } from './beer/beer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BeerService } from './core/beer.service';
 import { OwnBeerService } from './core/own-beer.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { OwnBeerService } from './core/own-beer.service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,

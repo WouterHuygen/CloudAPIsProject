@@ -5,7 +5,7 @@
         <img class="card-img-top image" [src]="user.image" alt="Card image cap">
         <div *ngIf='user.provider != "password"'class="card-body">
           <h4 class="card-title">{{user.name}}</h4>
-          <p class="card-text">This is an example of Social Authentication using Firebase in an Angular 5 web app. </p>
+          <p class="card-text">Dit is jou persoonlijke user acount</p>
         </div>
         <button type="button" (click)="user.logout()" class="btn btn-danger btn-block">Logout</button>
       </div>

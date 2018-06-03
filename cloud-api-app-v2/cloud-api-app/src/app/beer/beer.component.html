@@ -4,11 +4,11 @@
       <div class="col">
         <h4 class="card-title">External API</h4>
         <div class="btn-group">
-            <button type="button" class="btn btn-primary waves-light" (click)="PreviousPage()" mdbWavesEffect>Previous</button>
-            <button type="button" class="btn btn-primary waves-light" (click)="NextPage()" mdbWavesEffect>Next</button>
+            <button type="button" class="btn btn-primary waves-light" [(ngModel)]="page" (click)="PreviousPage()" mdbWavesEffect>Previous</button>
+            <button type="button" class="btn btn-primary waves-light" [(ngModel)]="page" (click)="NextPage()" mdbWavesEffect>Next</button>
         </div>
         <div *ngFor="let item of beers">
-            <div class="card" *ngIf="!btnPressed">
+            <div class="card">
             <div class="row ">
               <div class="col-auto">
                   <img class="img-thumbnail mt-3 ml-4" style="height: 250px;" src="{{item.image_url}}" alt="">
@@ -33,6 +33,20 @@
       
       <div class="col">
         <h4 class="card-title">Own API</h4>
+        <div class="md-form">
+                <label for="form1" class="">Beer name</label>
+                <input mdbInputDirective type="text" [(ngModel)]="_name" name="text" id="form1" class="form-control">
+                <label for="form2" class="">Beer image url</label>
+                <input mdbInputDirective type="text" [(ngModel)]="_image" name="text" id="form2" class="form-control">
+                <label for="form3" class="">Beer type</label>
+                <input mdbInputDirective type="text" [(ngModel)]="_type" name="text" id="form3" class="form-control">
+                <label for="form4" class="">Beer description</label>
+                <input mdbInputDirective type="text" [(ngModel)]="_description" name="text" id="form4" class="form-control">
+                <label for="form5" class="">Beer alcohol percentage</label>
+                <input mdbInputDirective type="text" [(ngModel)]="_alcoholpercentage" name="text" id="form5" class="form-control">
+            </div>
+        <button type="button" class="btn btn-primary waves-light mt-3 mb-3" (click)="addOwnBeer()" mdbWavesEffect>Add Beer</button>
+        <br>
         <div *ngFor="let item2 of ownBeers">
             <div class="card">
             <div class="row ">
