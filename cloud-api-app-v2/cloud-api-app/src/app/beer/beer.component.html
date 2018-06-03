@@ -1,3 +1,58 @@
-<p *ngFor="let item of beers">{{item.name}}</p>
+<div class="container">
+    <div class="row">
+     
+      <div class="col">
+        <div *ngFor="let item of beers">
+            <div class="card">
+            <div class="row ">
+              <div class="col-auto">
+                  <img class="img-thumbnail mt-3 ml-4" style="height: 250px;" src="{{item.image_url}}" alt="">
+              </div>
+              <div class="col mr-auto ">
+                  <div class="card-body">
+                      <h4 class="card-title">{{ item.name }}</h4>
+                      <span class="badge badge-default">{{ item.id }}</span>
+                      <span class="badge badge-success">{{ item.tagline }}</span>
+                      <span class="badge badge-danger">{{item.abv}} %</span>
+                      <br>
+                      <br>
+                      <p class="card-text">{{ item.description }}
+                      </p>
+                  </div>
+              </div>
+            </div>
+            </div>
+            <br>
+          </div>
+      </div>
+      
+      <div class="col">
+        <div *ngFor="let item2 of ownBeers">
+            <div class="card">
+            <div class="row ">
+              <div class="col-auto">
+                  <img class="img-thumbnail mt-3 ml-4" style="height: 250px;" src="{{item2.image}}" alt="">
+              </div>
+              <div class="col mr-auto ">
+                  <div class="card-body">
+                      <!--Title-->
+                      <h4 class="card-title">{{ item2.name }}</h4>
+                      <!--Text-->
+                      <span class="badge badge-default">{{ item2.id }}</span>
+                      <span class="badge badge-success">{{ item2.type }}</span>
+                      <span class="badge badge-danger">{{item2.alcoholPercentage}} %</span>
+                      <br>
+                      <br>
+                      <p class="card-text">{{ item2.description }}
+                      </p>
+                  </div>
+              </div>
+            </div>
+            </div>
+            <br>
+          </div>
+      </div> 
+    </div>
+  </div>
 
 

@@ -21,6 +21,10 @@ export class BeerService {
   getAllBeers(): Observable<RootObject>{
     return this.http.get<RootObject>(`https://api.punkapi.com/v2/beers`);
   }
+
+  getBeersPerPage(page): Observable<RootObject>{
+    return this.http.get<RootObject>(`https://api.punkapi.com/v2/beers?page=${page}&per_page=5`);
+  }
 }
 
 
