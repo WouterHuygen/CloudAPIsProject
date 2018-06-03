@@ -2,8 +2,13 @@
     <div class="row">
      
       <div class="col">
+        <h4 class="card-title">External API</h4>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary waves-light" (click)="PreviousPage()" mdbWavesEffect>Previous</button>
+            <button type="button" class="btn btn-primary waves-light" (click)="NextPage()" mdbWavesEffect>Next</button>
+        </div>
         <div *ngFor="let item of beers">
-            <div class="card">
+            <div class="card" *ngIf="!btnPressed">
             <div class="row ">
               <div class="col-auto">
                   <img class="img-thumbnail mt-3 ml-4" style="height: 250px;" src="{{item.image_url}}" alt="">
@@ -27,6 +32,7 @@
       </div>
       
       <div class="col">
+        <h4 class="card-title">Own API</h4>
         <div *ngFor="let item2 of ownBeers">
             <div class="card">
             <div class="row ">
@@ -35,9 +41,7 @@
               </div>
               <div class="col mr-auto ">
                   <div class="card-body">
-                      <!--Title-->
                       <h4 class="card-title">{{ item2.name }}</h4>
-                      <!--Text-->
                       <span class="badge badge-default">{{ item2.id }}</span>
                       <span class="badge badge-success">{{ item2.type }}</span>
                       <span class="badge badge-danger">{{item2.alcoholPercentage}} %</span>

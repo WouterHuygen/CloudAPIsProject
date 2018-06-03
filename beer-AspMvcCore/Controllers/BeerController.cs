@@ -15,7 +15,7 @@ public class BeerController : Controller
     }
 
     [HttpGet]         // api/v1/beers
-    public List<Beer> GetAllBeers(string type, string name, int? page, string sort, int length = 1000, string dir = "asc")
+    public List<Beer> GetAllBeers(string type, string name, int? page, string sort, int length = 5, string dir = "asc")
     {
         IQueryable<Beer> query = context.Beers;
 

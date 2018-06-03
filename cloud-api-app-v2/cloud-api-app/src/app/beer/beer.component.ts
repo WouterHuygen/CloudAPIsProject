@@ -10,10 +10,9 @@ import { OwnRootObject, OwnBeerService } from '../core/own-beer.service';
 export class BeerComponent implements OnInit {
 
   beers: RootObject;
-
   ownBeers: OwnRootObject;
-
   page: number = 1;
+  btnPressed: boolean = false;
 
   constructor(private service: BeerService, private ownService: OwnBeerService) { }
 
@@ -40,5 +39,19 @@ export class BeerComponent implements OnInit {
       this.ownBeers = c;
     });
   }
-  
+
+  public NextPage(){
+    this.btnPressed = true;
+    this.page ++;
+    this.subscribeOnBeersPerPage();
+    this.btnPressed = false;
+  }
+  public PreviousPage(){
+    this.btnPressed = true;
+    if (this.page > 1) {
+      this.page --;
+      this.subscribeOnBeersPerPage();
+    }
+    this.btnPressed = false;
+  }
 }
