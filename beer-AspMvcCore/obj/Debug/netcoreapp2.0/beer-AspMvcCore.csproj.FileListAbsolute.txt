@@ -1,0 +1,11 @@
+D:\AP 2de jaar\2de Trimester\Cloud APIs\CloudAPIsProject\beer-AspMvcCore\bin\Debug\netcoreapp2.0\beer-AspMvcCore.deps.json
+D:\AP 2de jaar\2de Trimester\Cloud APIs\CloudAPIsProject\beer-AspMvcCore\bin\Debug\netcoreapp2.0\beer-AspMvcCore.runtimeconfig.json
+D:\AP 2de jaar\2de Trimester\Cloud APIs\CloudAPIsProject\beer-AspMvcCore\bin\Debug\netcoreapp2.0\beer-AspMvcCore.runtimeconfig.dev.json
+D:\AP 2de jaar\2de Trimester\Cloud APIs\CloudAPIsProject\beer-AspMvcCore\bin\Debug\netcoreapp2.0\beer-AspMvcCore.dll
+D:\AP 2de jaar\2de Trimester\Cloud APIs\CloudAPIsProject\beer-AspMvcCore\bin\Debug\netcoreapp2.0\beer-AspMvcCore.pdb
+D:\AP 2de jaar\2de Trimester\Cloud APIs\CloudAPIsProject\beer-AspMvcCore\obj\Debug\netcoreapp2.0\beer-AspMvcCore.csprojResolveAssemblyReference.cache
+D:\AP 2de jaar\2de Trimester\Cloud APIs\CloudAPIsProject\beer-AspMvcCore\obj\Debug\netcoreapp2.0\beer-AspMvcCore.csproj.CoreCompileInputs.cache
+D:\AP 2de jaar\2de Trimester\Cloud APIs\CloudAPIsProject\beer-AspMvcCore\obj\Debug\netcoreapp2.0\beer-AspMvcCore.AssemblyInfoInputs.cache
+D:\AP 2de jaar\2de Trimester\Cloud APIs\CloudAPIsProject\beer-AspMvcCore\obj\Debug\netcoreapp2.0\beer-AspMvcCore.AssemblyInfo.cs
+D:\AP 2de jaar\2de Trimester\Cloud APIs\CloudAPIsProject\beer-AspMvcCore\obj\Debug\netcoreapp2.0\beer-AspMvcCore.dll
+D:\AP 2de jaar\2de Trimester\Cloud APIs\CloudAPIsProject\beer-AspMvcCore\obj\Debug\netcoreapp2.0\beer-AspMvcCore.pdb
